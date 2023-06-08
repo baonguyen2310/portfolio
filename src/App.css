@@ -1,0 +1,73 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.banner,
+.skills,
+.projects,
+.contact,
+.footer {
+  padding-top: 100px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.skills,
+.projects,
+.contact h1,
+p {
+  text-align: center;
+  margin: 10px;
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .skills,
+  .projects h1,
+  p {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+  }
+}
+
+.social-media-container {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-container i {
+  margin: 10px;
+}
+
+.social-media-container i:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.home-img {
+    animation: home-img-anim 8s infinite;
+}
+
+@keyframes home-img-anim {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(2rem, 5rem);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
