@@ -4,54 +4,75 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-import project1 from '../assets/img/project1.png';
+import projectImg1 from "../assets/img/project1.png";
 
-const Project = () => {
+const Project = (props) => {
   return (
     <Card style={{ width: "18rem" }} className="mt-2">
-      <Card.Img variant="top" src={project1} />
+      <Card.Img variant="top" src={props.img} />
       <Card.Body>
-        <Card.Title>Project 1</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>{props.text}</Card.Text>
+        <Button variant="primary" href={props.href}>Go somewhere</Button>
       </Card.Body>
     </Card>
   );
 };
 
-
 const Projects = () => {
   return (
     <section className="projects" id="projects">
-        <h1>Projects</h1>
-        <p>
-            Nulla vitae elit libero, a pharetra augue mollis interdum
-            Nulla vitae elit libero, a pharetra augue mollis interdum
-            Nulla vitae elit libero, a pharetra augue mollis interdum
-            Nulla vitae elit libero, a pharetra augue mollis interdum
-        </p>
+      <h1>Projects</h1>
+      <p>
+        Nulla vitae elit libero, a pharetra augue mollis interdum Nulla vitae
+        elit libero, a pharetra augue mollis interdum Nulla vitae elit libero, a
+        pharetra augue mollis interdum Nulla vitae elit libero, a pharetra augue
+        mollis interdum
+      </p>
       <Container>
         <Row className="mx-auto">
-          <Col sm={12} md={6} xl={4} >
-            <Project />
+          <Col sm={12} md={6} xl={4}>
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+              href="https://vercel-build-ai-yoga-instructor-4os8e6mlg-baonguyen2310.vercel.app/"
+            />
           </Col>
           <Col sm={12} md={6} xl={4}>
-            <Project />
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+            />
           </Col>
           <Col sm={12} md={6} xl={4}>
-            <Project />
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+            />
           </Col>
           <Col sm={12} md={6} xl={4}>
-            <Project />
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+            />
           </Col>
           <Col sm={12} md={6} xl={4}>
-            <Project />
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+            />
           </Col>
           <Col sm={12} md={6} xl={4}>
-            <Project />
+            <Project
+              img={projectImg1}
+              name="AI Yoga Instructor"
+              text=" Nulla vitae elit libero, a pharetra augue mollis interdum"
+            />
           </Col>
         </Row>
       </Container>

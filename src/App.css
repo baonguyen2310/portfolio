@@ -39,10 +39,15 @@ p {
   }
 
   .contact {
-    text-align: center;
     width: 80%;
   }
 }
+
+@media screen and (max-width: 992px) {
+    .caption-skills {
+        display: none;
+    }
+  }
 
 .social-media-container {
   font-size: 40px;
@@ -62,6 +67,10 @@ p {
 
 .home-img {
     animation: home-img-anim 8s infinite;
+}
+
+.contact-form {
+    margin-left: 10px;
 }
 
 @keyframes home-img-anim {
