@@ -21,10 +21,17 @@ img {
   margin: auto;
 }
 
-.skills,
-.projects,
-.contact h1,
-p {
+.skills h1,
+.projects h1,
+.contact h1 {
+  text-align: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.skills > p,
+.projects > p,
+.contact > p {
   text-align: center;
   margin: 10px;
   width: 100%;
@@ -32,7 +39,14 @@ p {
 
 @media screen and (min-width: 992px) {
   .skills,
-  .projects h1, p {
+  .projects h1 {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+  }
+
+  .skills > p,
+  .projects > p {
     text-align: center;
     margin: auto;
     width: 60%;
