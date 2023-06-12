@@ -26,7 +26,9 @@ const handleSubmitForm = (e) => {
     message: message
   }
   
-  fetch('http://localhost:5000/contact', {
+  const API_URL = process.env.REACT_APP_API_URL;
+  console.log(API_URL);
+  fetch(API_URL + '/contact', {
     method: 'POST',  
     headers: {
       'Content-Type': 'application/json'
