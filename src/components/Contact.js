@@ -10,7 +10,33 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
-function ContactForm() {
+const handleSubmitForm = (e) => {
+  e.preventDefault();
+  const firstName = document.getElementById("contactForm.firstName").value;
+  const lastName = document.getElementById("contactForm.lastName").value;
+  const emailAddress = document.getElementById("contactForm.emailAddress").value;
+  const phoneNumber = document.getElementById("contactForm.phoneNumber").value;
+  const message = document.getElementById("contactForm.message").value;
+  
+  const body = {
+    firstName: firstName,
+    lastName: lastName,
+    emailAddress: emailAddress,
+    phoneNumber: phoneNumber,
+    message: message
+  }
+  
+  fetch('http://localhost:5000/contact', {
+    method: 'POST',  
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then((res) => res.json())
+  .then((data) => alert(data.status));
+}
+
+const ContactForm = () => {
   return (
     <Form className="contact-form">
       <Row className="w-100">
@@ -31,7 +57,7 @@ function ContactForm() {
             </Row>
             <Row>
             <Col sm={12} md={6} xl={6}>
-              <Form.Group controlId="contactForm.email">
+              <Form.Group controlId="contactForm.emailAddress">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="name@email.com" />
               </Form.Group>
@@ -52,7 +78,7 @@ function ContactForm() {
 
         </Col>
       </Row>
-          <Button variant="primary" type="submit" className="mt-3" size="lg">
+          <Button variant="primary" type="submit" className="mt-3" size="lg" onClick={ (e) => handleSubmitForm(e) }>
             Send
           </Button>
     </Form>
